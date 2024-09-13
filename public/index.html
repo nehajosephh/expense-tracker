@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracker</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            color: #333;
+        }
+        form {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+        label {
+            font-weight: bold;
+        }
+        input, select, button {
+            margin-bottom: 10px;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+        #balance {
+            font-size: 1.2em;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+        .error-message, .success-message {
+            color: #d9534f;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+        .success-message {
+            color: #5bc0de;
+        }
+        #messageContainer {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Expense Tracker</h1>
+    <form id="transactionForm">
+        <label for="description">Description:</label>
+        <input type="text" id="description" required><br>
+        <label for="amount">Amount:</label>
+        <input type="number" id="amount" step="0.01" required><br>
+        <label for="type">Type:</label>
+        <select id="type">
+            <option value="income">Income</option>
+            <option value="expense">Expense</option>
+        </select><br>
+        <label for="category">Category:</label>
+        <input type="text" id="category"><br>
+        <label for="date">Date:</label>
+        <input type="date" id="date"><br>
+        <button type="submit">Add Transaction</button>
+    </form>
+    
+    <h2>Transactions</h2>
+    <table id="transactionsTable">
+        <thead>
+            <tr>
+                <th>Description</th>
+                <th>Amount</th>
+                <th>Type</th>
+                <th>Category</th>
+                <th>Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Transactions will be inserted here -->
+        </tbody>
+    </table>
+    
+    <h2>Total Balance</h2>
+    <div id="balance">Loading...</div>
+    
+    <div id="messageContainer"></div> <!-- For displaying messages -->
+    
+    <script src="app.js"></script>
+</body>
+</html>
